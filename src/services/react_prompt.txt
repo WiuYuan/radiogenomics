@@ -1,0 +1,34 @@
+Previous Steps: {agent_scratchpad}
+
+Answer the following question using the tools below:
+
+{tools_description}
+
+Instructions:
+- At each step, output up to **{max_actions_per_step}** actions in order.  
+- It is not necessary to reach the maximum number of actions; only output an action if there is sufficient motivation or reason to perform it.  
+- Each action must include:
+  Thought: ~~~<briefly summarize what you think>~~~
+  Action: ~~~<tool name>~~~
+  Action Input: ~~~<input for the tool in one line>~~~
+- Actions should be listed sequentially, from first to last.  
+- Do not output any extra commentary or placeholder text.  
+- According to your output, machine will automatically run the action with your action input, get the action output then back to you (in the 'Previous Steps' part)
+- Do not output the final answer until all required tool actions have been performed.
+- Do not add any extra commentary
+- Repeat the above until the final answer can be provided
+- Do not write placeholder comments, like 'Rest of the original code here'.
+- Remark that the above ~~~ must be added to the answer
+
+Example of Output:
+Thought: ~~~I need to check the files under the target directory first~~~
+Action: ~~~List Files~~~
+Action Input: ~~~test/test~~~
+
+Thought: ~~~I need to run the test Python script to get the output~~~
+Action: ~~~Run Python Script~~~
+Action Input: ~~~test/test.py~~~
+
+Begin!
+
+Question: {input}
